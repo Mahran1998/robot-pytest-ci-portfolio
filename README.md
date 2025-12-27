@@ -1,11 +1,23 @@
 [![CI](https://github.com/Mahran1998/robot-pytest-ci-portfolio/actions/workflows/ci.yml/badge.svg)](https://github.com/Mahran1998/robot-pytest-ci-portfolio/actions/workflows/ci.yml)
 
+ small test automation portfolio project: **FastAPI** test target + **pytest** (unit + integration) + **Robot Framework** API tests, executed in **GitHub Actions CI** with downloadable HTML reports.
+
+ **CI workflow (proof):** https://github.com/Mahran1998/robot-pytest-ci-portfolio/actions/workflows/ci.yml
+
 ## Project Highlights
 - **FastAPI** demo service used as a test target (`/health`, `/calc/add`, `/items`)
 - **pytest** suite: unit tests + live API integration tests (runs against the running service)
 - **Robot Framework** API suite using **RequestsLibrary** (HTML `report.html` / `log.html`)
 - **GitHub Actions CI** runs on every push/PR and uploads Robot reports as **artifacts**
 - Local dev workflow via **Makefile** (`make ci-local`) for one-command reproduction
+
+
+## Skills Demonstrated
+- API testing (pytest + Robot Framework RequestsLibrary)
+- Test types: unit + integration (live API tests)
+- CI automation (GitHub Actions)
+- Reproducible CLI workflow (Makefile: `make ci-local`)
+- Debugging real test/CI issues (imports, expected HTTP errors, rounding)
 
 
 ## Architecture (simple)
@@ -46,7 +58,7 @@ make ci-local
 - `GET /calc/add?a=1&b=2` -> `{"a":1,"b":2,"sum":3}`
 - `POST /items` -> creates an item and returns it with an id and computed tax
 
-## what to look at
+## Key Files
 - `.github/workflows/ci.yml` (CI pipeline)
 - `tests/` (pytest tests, including live API tests)
 - `robot_tests/` (Robot Framework API tests)
