@@ -2,7 +2,7 @@
 Library           RequestsLibrary
 Library           Collections
 
-Suite Setup       Create Session    api    %{BASE_URL}    verify=${True}
+Suite Setup       Create Session    api    ${BASE_URL}    verify=${True}
 
 *** Variables ***
 ${BASE_URL}       http://127.0.0.1:8000
@@ -33,5 +33,5 @@ Create Item Returns 201 And Fields
 
 Negative Price Returns 400
     ${body}=    Create Dictionary    name=bad    price=-1
-    ${resp}=    POST On Session    api    /items    json=${body}
+    ${resp}=    POST On Session    api    /items    json=${body}    expected_status=400
     Should Be Equal As Integers   ${resp.status_code}    400

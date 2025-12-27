@@ -34,7 +34,7 @@ jobs:
 
       - name: Run Robot Framework
         run: |
-          robot -d robot-reports robot_tests
+          robot -d robot-reports -v BASE_URL:${BASE_URL} robot_tests
 
       - name: Upload Robot reports
         uses: actions/upload-artifact@v4

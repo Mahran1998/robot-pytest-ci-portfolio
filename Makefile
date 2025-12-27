@@ -1,3 +1,5 @@
+BASE_URL ?= http://127.0.0.1:8000
+
 .PHONY: install run test robot ci-local clean
 
 install:
@@ -10,6 +12,8 @@ test:
 	pytest -q
 
 robot:
+	robot -d robot-reports -v BASE_URL:$(BASE_URL) robot_tests
+
 	robot -d robot-reports robot_tests
 
 ci-local:

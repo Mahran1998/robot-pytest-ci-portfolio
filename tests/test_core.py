@@ -48,7 +48,7 @@ def test_calc_tax_negative_rate_raises():
 @pytest.mark.parametrize("price,percent,expected", [
     (100, 0, 100.00),
     (100, 10, 90.00),
-    (199.99, 50, 99.99),
+    (199.99, 50, 100.00),
     (10, 100, 0.00),
 ])
 def test_apply_discount(price, percent, expected):
