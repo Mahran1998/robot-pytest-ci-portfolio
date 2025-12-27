@@ -50,11 +50,19 @@ make ci-local
 - `robot_tests/` (Robot Framework API tests)
 - `Makefile` (simple dev workflow)
 
-## Suggested screenshots to add (optional but strong)
-1) GitHub Actions run (green) + badge
-2) Robot `report.html` and `log.html`
-3) `kubectl get pods` (if you later deploy this to Kubernetes)
+## Test Reports (Robot Framework)
 
+Robot Framework generates HTML reports on every CI run and publishes them as GitHub Actions artifacts.
+
+**How to access:**
+1. Go to the **Actions** tab in this repository
+2. Open the latest **CI** workflow run (green ✅)
+3. Scroll to **Artifacts**
+4. Download **robot-reports** and open:
+   - `report.html`
+   - `log.html`
+
+This provides a reproducible, CI-generated proof of test execution (not just screenshots).
 ---
 
 ### Notes
