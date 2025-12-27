@@ -1,13 +1,15 @@
-# Robot Framework + Pytest + CI (DevOps Test Automation Portfolio)
+[![CI](https://github.com/Mahran1998/robot-pytest-ci-portfolio/actions/workflows/ci.yml/badge.svg)](https://github.com/Mahran1998/robot-pytest-ci-portfolio/actions/workflows/ci.yml)
 
-A small, practical portfolio repo that proves you can:
-- write **Python tests with pytest** (unit + API integration)
-- write **Robot Framework** API tests (RequestsLibrary)
-- run everything in **CI (GitHub Actions)** with a green badge
-- generate Robot reports (`log.html`, `report.html`) and upload them as CI artifacts
+## Project Highlights
+- **FastAPI** demo service used as a test target (`/health`, `/calc/add`, `/items`)
+- **pytest** suite: unit tests + live API integration tests (runs against the running service)
+- **Robot Framework** API suite using **RequestsLibrary** (HTML `report.html` / `log.html`)
+- **GitHub Actions CI** runs on every push/PR and uploads Robot reports as **artifacts**
+- Local dev workflow via **Makefile** (`make ci-local`) for one-command reproduction
+
 
 ## Architecture (simple)
-- A tiny **FastAPI** service runs locally (or in CI) on `http://127.0.0.1:8000`
+- A **FastAPI** service runs locally (or in CI) on `http://127.0.0.1:8000`
 - **pytest** runs:
   - unit tests against pure Python functions
   - live API tests against the running service
@@ -44,7 +46,7 @@ make ci-local
 - `GET /calc/add?a=1&b=2` -> `{"a":1,"b":2,"sum":3}`
 - `POST /items` -> creates an item and returns it with an id and computed tax
 
-## Proof for recruiters (what to look at)
+## what to look at
 - `.github/workflows/ci.yml` (CI pipeline)
 - `tests/` (pytest tests, including live API tests)
 - `robot_tests/` (Robot Framework API tests)
@@ -62,9 +64,5 @@ Robot Framework generates HTML reports on every CI run and publishes them as Git
    - `report.html`
    - `log.html`
 
-This provides a reproducible, CI-generated proof of test execution (not just screenshots).
 ---
 
-### Notes
-- This repo is intentionally small and fast.
-- Next upgrade (if you want): containerize + deploy to kind and run the same tests against the K8s Service.
